@@ -1,56 +1,81 @@
 body {
   font-family: arial, helvetica, sans-serif;
   font-size: 14px;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+}
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 ul {
   margin: 0 0 0 5px;
   padding: 0;
-  list-style-position: inside; }
+  list-style-position: inside;
+}
 
 p {
-  margin: 0 0 20px; }
+  margin: 0 0 20px;
+}
 
 button.active {
   border-bottom: 4px solid #555;
   position: relative;
   bottom: 10px;
-  margin-bottom: -4px; }
+  margin-bottom: -4px;
+}
 
 .wrapper {
   display: block;
   margin: 0 auto;
   width: 940px;
-  position: relative; }
+  position: relative;
+}
 
 .pathfinder {
   cursor: pointer;
   border-top: 1px solid #000;
   padding-top: 20px;
-  margin-top: 20px; }
-  .pathfinder.grid .voxel {
-    outline: 1px solid #2DEBAE; }
-  .pathfinder .row:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .pathfinder .voxel {
+  margin-top: 20px;
+
+  &.grid {
+    .voxel {
+      outline: 1px solid #2DEBAE;
+    }
+  }
+
+  .row {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  .voxel {
     width: 100px;
     height: 100px;
     display: block;
-    float: left; }
-    .pathfinder .voxel[data-pos="start"] {
-      background: #0f0; }
-    .pathfinder .voxel[data-pos="end"] {
-      background: #f00; }
-    .pathfinder .voxel[data-cost="0"] {
-      background: #000; }
-    .pathfinder .voxel[data-cost="2"] {
-      background: #00f; }
+    float: left;
+
+    &[data-pos="start"] {
+      background: #0f0;
+    }
+
+    &[data-pos="end"] {
+      background: #f00;
+    }
+
+    &[data-cost="0"] {
+      background: #000;
+    }
+
+    &[data-cost="2"] {
+      background: #00f;
+    }
+  }
+}
 
 /*.map {*/
 /*border-collapse: collapse;*/
@@ -61,6 +86,7 @@ button.active {
 /*-ms-user-select: none;*/
 /*user-select: none;*/
 /*}*/
+
 /*.map-tile {*/
 /*border: 2px solid #aaa;*/
 /*width: 40px;*/
@@ -70,28 +96,36 @@ button.active {
 /*cursor: pointer;*/
 /*position: relative;*/
 /*}*/
+
 /*.map-tile:hover {*/
 /*outline: 5px solid rgba(0, 150, 200, 0.8);*/
 /*border-color: #0af;*/
 /*}*/
+
 /*.map-tile[data-status="closed"] {*/
 /*background: #000;*/
 /*}*/
+
 /*.map-tile[data-status="begin"] {*/
 /*background: #0d0;*/
 /*}*/
+
 /*.map-tile[data-status="end"] {*/
 /*background: #d00;*/
 /*}*/
+
 /*.map-tile[data-status="set-closed"] {*/
 /*background: #8B7A5E;*/
 /*}*/
+
 /*.map-tile[data-status="set-opened"] {*/
 /*background: #9FD6D2;*/
 /*}*/
+
 /*.map-tile[data-status="path"] {*/
 /*background: #f0f;*/
 /*}*/
+
 /*.map-tile[data-lv]:after {*/
 /*font-size: 30px;*/
 /*position: absolute;*/
@@ -104,15 +138,19 @@ button.active {
 /*letter-spacing: -2px;*/
 /*color: #999;*/
 /*}*/
+
 /*.map-tile[data-lv="2"]:after {*/
 /*content: '\2022\2022';*/
 /*}*/
+
 /*.map-tile[data-lv="3"]:after {*/
 /*content: '\2022\2022\2022';*/
 /*}*/
+
 /*.map-tile[data-lv="4"]:after {*/
 /*content: '\2022\2022\2022\2022';*/
 /*}*/
+
 /*.stat {*/
 /*position: absolute;*/
 /*}*/
@@ -122,18 +160,21 @@ button.active {
 /*left: 4px;*/
 /*position: absolute;*/
 /*}*/
+
 /*.stat.g,*/
 /*.stats-preview .g {*/
 /*bottom: 4px;*/
 /*left: 4px;*/
 /*position: absolute;*/
 /*}*/
+
 /*.stat.h,*/
 /*.stats-preview .h {*/
 /*position: absolute;*/
 /*bottom: 4px;*/
 /*right: 5px;*/
 /*}*/
+
 /*.stats-preview {*/
 /*width: 100px;*/
 /*height: 100px;*/
@@ -143,16 +184,20 @@ button.active {
 /*font-size: 30px;*/
 /*position: relative;*/
 /*}*/
+
 /*.break {*/
 /*margin-bottom: 20px;*/
 /*display: block;*/
 /*}*/
+
 /*.break.alt {*/
 /*margin-bottom: 10px;*/
 /*}*/
+
 /*.legend-wrapper {*/
 /*float: right;*/
 /*}*/
+
 /*.legend {*/
 /*padding: 0;*/
 /*background: #ddd;*/
@@ -161,25 +206,32 @@ button.active {
 /*border: 1px solid #aaa;*/
 /*margin-left: 0;*/
 /*}*/
+
 /*.legend li {*/
 /*border-left: 30px solid #fff;*/
 /*padding: 5px 20px 5px 10px;*/
 /*}*/
+
 /*.legend .closed {*/
 /*border-color: #000;*/
 /*}*/
+
 /*.legend .begin {*/
 /*border-color: #0d0;*/
 /*}*/
+
 /*.legend .end {*/
 /*border-color: #d00;*/
 /*}*/
+
 /*.legend .set-opened {*/
 /*border-color: #9FD6D2;*/
 /*}*/
+
 /*.legend .set-closed {*/
 /*border-color: #8B7A5E;*/
 /*}*/
+
 /*.legend .path {*/
 /*border-color: #f0f;*/
 /*}*/
