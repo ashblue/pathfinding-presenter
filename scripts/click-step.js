@@ -11,7 +11,7 @@ $(document).ready(function () {
         index: 0,
 
         init: function ($el, stack) {
-            this.$el = $el;
+            this.$el = $el.find('.matrix');
             this.stack = stack;
             this.index = stack.length - 1;
 

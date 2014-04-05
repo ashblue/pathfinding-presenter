@@ -1,4 +1,10 @@
 $(document).ready(function () {
+    var _event = {
+        clickBtn: function () {
+            $(this).parents('.pathfinder').toggleClass($(this).data('class'));
+        }
+    };
+
      window.Toggle = window.Class.extend({
          $el: null,
          $grid: null,
@@ -8,15 +14,12 @@ $(document).ready(function () {
 
              this.addButton('Grid', 'grid');
              this.addButton('Type', 'type');
-
-             this.$el.find('button').click(function () {
-                 $el.toggleClass($(this).data('class'));
-             });
          },
 
          addButton: function (title, className) {
-             this.$grid = $('<button data-class="' + className + '">' + title + '</button>');
-             this.$el.append(this.$grid);
+             var $btn = $('<button data-class="' + className + '">' + title + '</button>');
+             this.$el.append($btn);
+             $btn.click(_event.clickBtn);
          }
     });
 });

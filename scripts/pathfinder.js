@@ -59,6 +59,15 @@ window.PathFinder = window.Class.extend({
         return false;
     },
 
+    /**
+     * @TODO In this method we need to record each time a new tile is inspected and record it
+     * Tile data should include x, y, direction (n, w, e, s), group (open/closed), step cost, heuristic, total cost
+     * @param xC
+     * @param yC
+     * @param xT
+     * @param yT
+     * @returns {*}
+     */
     findPath: function (xC, yC, xT, yT) {
         var current, // Current best open tile
             neighbors, // Dump of all nearby neighbor tiles
@@ -121,12 +130,6 @@ window.PathFinder = window.Class.extend({
             return stack;
         }
     },
-
-//    setVisual: function () {
-//        jp.visual.clearPath()
-//            .setTileGroup(this.open, 'set-opened')
-//            .setTileGroup(this.closed, 'set-closed');
-//    },
 
     reset: function () {
         this.closed = [];
