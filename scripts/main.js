@@ -21,11 +21,13 @@ $(document).ready(function () {
                     y: $end.parent('div').index()
                 };
 
-                var stepClicker = new ClickStep($el, pathfinder.findPath(start.x, start.y, end.x, end.y));
+                var path = pathfinder.findPath(start.x, start.y, end.x, end.y);
 
-                // Create pathfinder by passing in map
-                // Generate path from start to finish
-                // Store path in a click progression object that will visually move player through the path it has generated
+                if (!$el.hasClass('history')) {
+                    var stepClicker = new ClickStep($el, path);
+                } else {
+                    var historyClicker = new ClickHistory($el, pathfinder.history);
+                }
             });
         },
 

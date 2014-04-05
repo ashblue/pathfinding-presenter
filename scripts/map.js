@@ -34,10 +34,10 @@ window.Map = window.Class.extend({
         var neighbors = [];
 
         // Check left, right, top, bottom
-        if (!this.blocked(x + 1, y)) neighbors.push(new window.Tile(x + 1, y));
-        if (!this.blocked(x - 1, y)) neighbors.push(new window.Tile(x - 1, y));
-        if (!this.blocked(x, y + 1)) neighbors.push(new window.Tile(x, y + 1));
         if (!this.blocked(x, y - 1)) neighbors.push(new window.Tile(x, y - 1));
+        if (!this.blocked(x + 1, y)) neighbors.push(new window.Tile(x + 1, y));
+        if (!this.blocked(x, y + 1)) neighbors.push(new window.Tile(x, y + 1));
+        if (!this.blocked(x - 1, y)) neighbors.push(new window.Tile(x - 1, y));
 
         return neighbors;
     },

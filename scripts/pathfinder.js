@@ -2,16 +2,21 @@
 // Good place to add details such as flying, swimming, ect.
 window.PathFinder = window.Class.extend({
     map: null, // Map class reference
-    closed: [], // Taken steps
-    open: [], // Available steps that can be taken
+    closed: null, // Taken steps
+    open: null, // Available steps that can be taken
+    history: null,
     step: 0, // Step count
     maxSearchDistance: 100, // Maximum number of steps that can be taken before shutting down a closed path
 
     init: function (map) {
+        this.closed = [];
+        this.open = [];
+        this.history = [];
         this.map = map;
     },
 
     addOpen: function (step) {
+        this.addHistory(step, 'open');
         this.open.push(step);
         return this;
     },
@@ -45,6 +50,7 @@ window.PathFinder = window.Class.extend({
     },
 
     addClosed: function (step) {
+        this.addHistory(step, 'closed');
         this.closed.push(step);
         return this;
     },
@@ -57,6 +63,13 @@ window.PathFinder = window.Class.extend({
         }
 
         return false;
+    },
+
+    addHistory: function (step, group) {
+        this.history.push({
+            step: step,
+            group: group
+        });
     },
 
     /**
@@ -80,6 +93,7 @@ window.PathFinder = window.Class.extend({
             .addOpen(new window.Step(xC, yC, xT, yT, this.step, false));
 
         while (this.open.length !== 0) {
+            this.step++;
             current = this.getBestOpen();
 
             // Check if goal has been discovered to build a path
@@ -94,6 +108,8 @@ window.PathFinder = window.Class.extend({
             // Get neighbors from the map and check them
             neighbors = this.map.getNeighbors(current.x, current.y);
             for (i = 0; i < neighbors.length; i++) {
+                this.step++;
+
                 // Get current step and distance from current to neighbor
                 stepCost = current.g + this.map.getCost(current.x, current.y, neighbors[i].x, neighbors[i].y);
 

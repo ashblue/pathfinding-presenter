@@ -10,6 +10,22 @@ $(document).ready(function () {
         distanceM: function (xC, yC, xT, yT) {
             var dx = Math.abs(xT - xC), dy = Math.abs(yT - yC);
             return dx + dy;
+        },
+
+        getDirection: function (x1, y1, x2, y2) {
+            var result;
+
+            if (x1 > x2) {
+                result = 'west';
+            } else if (x1 > x2) {
+                result = 'east';
+            } else if (y1 > y2) {
+                result = 'north';
+            } else if (y1 < y2) {
+                result = 'south';
+            }
+
+            return result;
         }
     };
 
@@ -17,6 +33,7 @@ $(document).ready(function () {
         // herustic
         var h = _private.distanceM(xC, yC, xT, yT);
 
+        this.direction = _private.getDirection(parentStep.x, parentStep.y, xC, yC);
         this.x = xC;
         this.y = yC;
         this.g = totalSteps;

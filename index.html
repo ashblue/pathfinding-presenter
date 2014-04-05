@@ -186,6 +186,180 @@
                 </div>
             </div>
         </div>
+
+        <div class="pathfinder history grid type show-step">
+            <div class="matrix">
+                <div class="row">
+                    <div data-x="0" data-y="0" class="voxel"></div>
+                    <div data-x="1" data-y="0" class="voxel"></div>
+                    <div data-x="2" data-y="0" class="voxel"></div>
+                    <div data-x="3" data-y="0" class="voxel"></div>
+                    <div data-x="4" data-y="0" class="voxel"></div>
+                    <div data-x="5" data-y="0" class="voxel" data-pos="end"></div>
+                </div>
+
+                <div class="row">
+                    <div data-x="0" data-y="1" class="voxel"></div>
+                    <div data-x="1" data-y="1" class="voxel" data-cost="0"></div>
+                    <div data-x="2" data-y="1" class="voxel" data-cost="0"></div>
+                    <div data-x="3" data-y="1" class="voxel"></div>
+                    <div data-x="4" data-y="1" class="voxel" data-cost="2"></div>
+                    <div data-x="5" data-y="1" class="voxel"></div>
+                </div>
+
+                <div class="row">
+                    <div data-x="0" data-y="2" class="voxel"></div>
+                    <div data-x="1" data-y="2" class="voxel"></div>
+                    <div data-x="2" data-y="2" class="voxel"></div>
+                    <div data-x="3" data-y="2" class="voxel alt" data-cost="0"></div>
+                    <div data-x="4" data-y="2" class="voxel" data-cost="2"></div>
+                    <div data-x="5" data-y="2" class="voxel"></div>
+                </div>
+
+                <div class="row">
+                    <div data-x="0" data-y="3" class="voxel alt" data-cost="0"></div>
+                    <div data-x="1" data-y="3" class="voxel" data-cost="0"></div>
+                    <div data-x="2" data-y="3" class="voxel"></div>
+                    <div data-x="3" data-y="3" class="voxel" data-cost="0"></div>
+                    <div data-x="4" data-y="3" class="voxel"></div>
+                    <div data-x="5" data-y="3" class="voxel" data-cost="0"></div>
+                </div>
+
+                <div class="row">
+                    <div data-x="0" data-y="4" class="voxel"></div>
+                    <div data-x="1" data-y="4" class="voxel" data-pos="start"><span class="player"></span></div>
+                    <div data-x="2" data-y="4" class="voxel"></div>
+                    <div data-x="3" data-y="4" class="voxel"></div>
+                    <div data-x="4" data-y="4" class="voxel"></div>
+                    <div data-x="5" data-y="4" class="voxel" data-cost="2"></div>
+                </div>
+
+                <div class="row">
+                    <div data-x="0" data-y="5" class="voxel"></div>
+                    <div data-x="1" data-y="5" class="voxel"></div>
+                    <div data-x="2" data-y="5" class="voxel" data-cost="0"></div>
+                    <div data-x="3" data-y="5" class="voxel"></div>
+                    <div data-x="4" data-y="5" class="voxel"></div>
+                    <div data-x="5" data-y="5" class="voxel"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pathfinder history grid type show-heuristic">
+            <div class="matrix">
+                <div class="row">
+                    <div data-x="0" data-y="0" class="voxel"></div>
+                    <div data-x="1" data-y="0" class="voxel"></div>
+                    <div data-x="2" data-y="0" class="voxel"></div>
+                    <div data-x="3" data-y="0" class="voxel"></div>
+                    <div data-x="4" data-y="0" class="voxel"></div>
+                    <div data-x="5" data-y="0" class="voxel" data-pos="end"></div>
+                </div>
+
+                <div class="row">
+                    <div data-x="0" data-y="1" class="voxel"></div>
+                    <div data-x="1" data-y="1" class="voxel" data-cost="0"></div>
+                    <div data-x="2" data-y="1" class="voxel" data-cost="0"></div>
+                    <div data-x="3" data-y="1" class="voxel"></div>
+                    <div data-x="4" data-y="1" class="voxel" data-cost="2"></div>
+                    <div data-x="5" data-y="1" class="voxel"></div>
+                </div>
+
+                <div class="row">
+                    <div data-x="0" data-y="2" class="voxel"></div>
+                    <div data-x="1" data-y="2" class="voxel"></div>
+                    <div data-x="2" data-y="2" class="voxel"></div>
+                    <div data-x="3" data-y="2" class="voxel alt" data-cost="0"></div>
+                    <div data-x="4" data-y="2" class="voxel" data-cost="2"></div>
+                    <div data-x="5" data-y="2" class="voxel"></div>
+                </div>
+
+                <div class="row">
+                    <div data-x="0" data-y="3" class="voxel alt" data-cost="0"></div>
+                    <div data-x="1" data-y="3" class="voxel" data-cost="0"></div>
+                    <div data-x="2" data-y="3" class="voxel"></div>
+                    <div data-x="3" data-y="3" class="voxel" data-cost="0"></div>
+                    <div data-x="4" data-y="3" class="voxel"></div>
+                    <div data-x="5" data-y="3" class="voxel" data-cost="0"></div>
+                </div>
+
+                <div class="row">
+                    <div data-x="0" data-y="4" class="voxel"></div>
+                    <div data-x="1" data-y="4" class="voxel" data-pos="start"><span class="player"></span></div>
+                    <div data-x="2" data-y="4" class="voxel"></div>
+                    <div data-x="3" data-y="4" class="voxel"></div>
+                    <div data-x="4" data-y="4" class="voxel"></div>
+                    <div data-x="5" data-y="4" class="voxel" data-cost="2"></div>
+                </div>
+
+                <div class="row">
+                    <div data-x="0" data-y="5" class="voxel"></div>
+                    <div data-x="1" data-y="5" class="voxel"></div>
+                    <div data-x="2" data-y="5" class="voxel" data-cost="0"></div>
+                    <div data-x="3" data-y="5" class="voxel"></div>
+                    <div data-x="4" data-y="5" class="voxel"></div>
+                    <div data-x="5" data-y="5" class="voxel"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pathfinder history grid type show-stats">
+            <div class="matrix">
+                <div class="row">
+                    <div data-x="0" data-y="0" class="voxel"></div>
+                    <div data-x="1" data-y="0" class="voxel"></div>
+                    <div data-x="2" data-y="0" class="voxel"></div>
+                    <div data-x="3" data-y="0" class="voxel"></div>
+                    <div data-x="4" data-y="0" class="voxel"></div>
+                    <div data-x="5" data-y="0" class="voxel" data-pos="end"></div>
+                </div>
+
+                <div class="row">
+                    <div data-x="0" data-y="1" class="voxel"></div>
+                    <div data-x="1" data-y="1" class="voxel" data-cost="0"></div>
+                    <div data-x="2" data-y="1" class="voxel" data-cost="0"></div>
+                    <div data-x="3" data-y="1" class="voxel"></div>
+                    <div data-x="4" data-y="1" class="voxel" data-cost="2"></div>
+                    <div data-x="5" data-y="1" class="voxel"></div>
+                </div>
+
+                <div class="row">
+                    <div data-x="0" data-y="2" class="voxel"></div>
+                    <div data-x="1" data-y="2" class="voxel"></div>
+                    <div data-x="2" data-y="2" class="voxel"></div>
+                    <div data-x="3" data-y="2" class="voxel alt" data-cost="0"></div>
+                    <div data-x="4" data-y="2" class="voxel" data-cost="2"></div>
+                    <div data-x="5" data-y="2" class="voxel"></div>
+                </div>
+
+                <div class="row">
+                    <div data-x="0" data-y="3" class="voxel alt" data-cost="0"></div>
+                    <div data-x="1" data-y="3" class="voxel" data-cost="0"></div>
+                    <div data-x="2" data-y="3" class="voxel"></div>
+                    <div data-x="3" data-y="3" class="voxel" data-cost="0"></div>
+                    <div data-x="4" data-y="3" class="voxel"></div>
+                    <div data-x="5" data-y="3" class="voxel" data-cost="0"></div>
+                </div>
+
+                <div class="row">
+                    <div data-x="0" data-y="4" class="voxel"></div>
+                    <div data-x="1" data-y="4" class="voxel" data-pos="start"><span class="player"></span></div>
+                    <div data-x="2" data-y="4" class="voxel"></div>
+                    <div data-x="3" data-y="4" class="voxel"></div>
+                    <div data-x="4" data-y="4" class="voxel"></div>
+                    <div data-x="5" data-y="4" class="voxel" data-cost="2"></div>
+                </div>
+
+                <div class="row">
+                    <div data-x="0" data-y="5" class="voxel"></div>
+                    <div data-x="1" data-y="5" class="voxel"></div>
+                    <div data-x="2" data-y="5" class="voxel" data-cost="0"></div>
+                    <div data-x="3" data-y="5" class="voxel"></div>
+                    <div data-x="4" data-y="5" class="voxel"></div>
+                    <div data-x="5" data-y="5" class="voxel"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Libs -->
@@ -197,6 +371,7 @@
     <script type="text/javascript" src="scripts/models/tile.js"></script>
     <script type="text/javascript" src="scripts/pathfinder.js"></script>
     <script type="text/javascript" src="scripts/click-step.js"></script>
+    <script type="text/javascript" src="scripts/click-history.js"></script>
     <script type="text/javascript" src="scripts/map.js"></script>
     <script type="text/javascript" src="scripts/toggle.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
