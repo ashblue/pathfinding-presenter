@@ -45,6 +45,31 @@ button.active {
     }
   }
 
+  &.type {
+    .voxel {
+      &[data-pos]:after,
+      &[data-cost]:after {
+        opacity: 0.3;
+      }
+
+      &[data-pos="start"]:after {
+        background: #0f0;
+      }
+
+      &[data-pos="end"]:after {
+        background: #f00;
+      }
+
+      &[data-cost="2"]:after {
+        background: #00f;
+      }
+
+      &[data-cost="0"]:after {
+        background: #000;
+      }
+    }
+  }
+
   .row {
     &:after {
       content: "";
@@ -58,21 +83,46 @@ button.active {
     height: 100px;
     display: block;
     float: left;
+    position: relative;
 
-    &[data-pos="start"] {
-      background: #0f0;
+    &[data-pos]:after,
+    &[data-cost]:after,
+    &[data-pos]:before,
+    &[data-cost]:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .player {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/coal.png');
+      background-size: cover;
     }
 
     &[data-pos="end"] {
-      background: #f00;
+      background-image: url('images/chest.png');
+      background-size: cover;
     }
 
     &[data-cost="0"] {
-      background: #000;
+      background-image: url('images/rock.png');
+      background-size: cover;
+
+      &.alt {
+        background-image: url('images/rose-bush.png');
+      }
     }
 
     &[data-cost="2"] {
-      background: #00f;
+      background-image: url('images/water.png');
+      background-size: cover;
     }
   }
 }

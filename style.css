@@ -34,6 +34,16 @@ button.active {
   margin-top: 20px; }
   .pathfinder.grid .voxel {
     outline: 1px solid #2DEBAE; }
+  .pathfinder.type .voxel[data-pos]:after, .pathfinder.type .voxel[data-cost]:after {
+    opacity: 0.3; }
+  .pathfinder.type .voxel[data-pos="start"]:after {
+    background: #0f0; }
+  .pathfinder.type .voxel[data-pos="end"]:after {
+    background: #f00; }
+  .pathfinder.type .voxel[data-cost="2"]:after {
+    background: #00f; }
+  .pathfinder.type .voxel[data-cost="0"]:after {
+    background: #000; }
   .pathfinder .row:after {
     content: "";
     display: table;
@@ -42,15 +52,33 @@ button.active {
     width: 100px;
     height: 100px;
     display: block;
-    float: left; }
-    .pathfinder .voxel[data-pos="start"] {
-      background: #0f0; }
+    float: left;
+    position: relative; }
+    .pathfinder .voxel[data-pos]:after, .pathfinder .voxel[data-cost]:after, .pathfinder .voxel[data-pos]:before, .pathfinder .voxel[data-cost]:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block; }
+    .pathfinder .voxel .player {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-image: url("images/coal.png");
+      background-size: cover; }
     .pathfinder .voxel[data-pos="end"] {
-      background: #f00; }
+      background-image: url("images/chest.png");
+      background-size: cover; }
     .pathfinder .voxel[data-cost="0"] {
-      background: #000; }
+      background-image: url("images/rock.png");
+      background-size: cover; }
+      .pathfinder .voxel[data-cost="0"].alt {
+        background-image: url("images/rose-bush.png"); }
     .pathfinder .voxel[data-cost="2"] {
-      background: #00f; }
+      background-image: url("images/water.png");
+      background-size: cover; }
 
 /*.map {*/
 /*border-collapse: collapse;*/

@@ -20,9 +20,8 @@ $(document).ready(function () {
                     x: $end.index(),
                     y: $end.parent('div').index()
                 };
-                console.log(pathfinder.findPath(start.x, start.y, end.x, end.y));
 
-                // var stepClicker = new StepClicker(pathfinder.findPath(start.x, start.y, end.x, end.y));
+                var stepClicker = new ClickStep($el, pathfinder.findPath(start.x, start.y, end.x, end.y));
 
                 // Create pathfinder by passing in map
                 // Generate path from start to finish

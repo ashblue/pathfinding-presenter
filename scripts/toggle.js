@@ -1,11 +1,4 @@
 $(document).ready(function () {
-    var _event = {
-        clickGrid: function () {
-            var $el = $(this);
-            $el.toggleClass()
-        }
-    };
-
      window.Toggle = window.Class.extend({
          $el: null,
          $grid: null,
@@ -13,13 +6,17 @@ $(document).ready(function () {
          init: function ($el) {
              this.$el = $el;
 
-             this.$grid = $('<button class="path-grid">Grid</button>');
-             $el.append(this.$grid);
-             this.$grid.click(this.grid.bind(this));
+             this.addButton('Grid', 'grid');
+             this.addButton('Type', 'type');
+
+             this.$el.find('button').click(function () {
+                 $el.toggleClass($(this).data('class'));
+             });
          },
 
-         grid: function () {
-             this.$el.toggleClass('grid');
+         addButton: function (title, className) {
+             this.$grid = $('<button data-class="' + className + '">' + title + '</button>');
+             this.$el.append(this.$grid);
          }
     });
 });
